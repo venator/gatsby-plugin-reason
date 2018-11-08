@@ -44,11 +44,14 @@ export const preprocessSource = ({ filename }) => {
     process.cwd(),
     moduleDir,
     filename,
-    false,
+    true,
     '.bs.js'
   )
   try {
-    return compileFileSync(moduleDir, compiledFilePath)
+    return compileFileSync(moduleDir, 'js', compiledFilePath)
+    // return new Promise((resolve, reject) => {
+      // resolve(compileFileSync(moduleDir, 'js', compiledFilePath))
+    // })
   } catch (e) {
     // Don't need to print error message since bsb will already do that
   }
@@ -57,7 +60,7 @@ export const preprocessSource = ({ filename }) => {
 export const resolvableExtensions = () => ['.ml', '.re']
 
 export const onCreatePage = (
-  { page, boundActionCreators: { createPage, deletePage } },
+  { page, actions: { createPage, deletePage } },
   { derivePathFromComponentName }
 ) => {
   return new Promise((resolve, reject) => {
