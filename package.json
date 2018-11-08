@@ -13,12 +13,11 @@
         "gatsby",
         "reason",
         "reasonml",
-        "plugin",
-        "gatsby-plugin"
+        "plugin"
     ],
     "author": "Jeremy Berglund",
     "license": "MIT",
-    "repository": "https://github.com/jtberglund/gatsby-plugin-reason",
+    "repository": "git+https://github.com/venator/gatsby-plugin-reason.git",
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.6.1",
@@ -30,6 +29,6 @@
         "reason-react": "^0.5.3"
     },
     "peerDependencies": {
-        "gatsby": "^1.0.0"
+        "gatsby": "^2.0.0"
     }
 }
